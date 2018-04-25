@@ -1,0 +1,9 @@
+﻿applications:
+- name: dt-cityinfo
+  memory: 256M
+  instances: 1
+  env:
+    http_proxy: 10.143.18.126:80
+    https_proxy: 10.143.18.126:80
+    no_proxy: localhost,127.0.0.1
+    ASPNETCORE_ENVIRONMENT: Development
