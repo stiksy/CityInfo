@@ -1,6 +1,7 @@
 ﻿applications:
 - name: dt-cityinfo
   memory: 256M
+  disk_quota: 128M
   instances: 1
   env:
     http_proxy: 10.143.18.126:80
