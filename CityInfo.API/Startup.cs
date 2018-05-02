@@ -38,11 +38,14 @@ namespace CityInfo.API
             //    }
             //});
 
-            services.AddTransient<IMailService, CloudMailService>();
 #if DEBUG
             services.AddTransient<IMailService, LocalMailService>();
+            //Console.WriteLine("DEBUG BUILD");
 #endif
-
+#if RELEASE
+            services.AddTransient<IMailService, CloudMailService>();
+            //Console.WriteLine("RELEASE BUILD");
+#endif
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
