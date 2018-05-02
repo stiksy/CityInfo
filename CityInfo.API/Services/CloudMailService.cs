@@ -15,9 +15,9 @@ namespace CityInfo.API.Services
         public void Send(string subject, string message)
         {
             // send mail - output to debug window
-            Console.WriteLine($"Mail from {_mailFrom} to {_mailTo}, using CloudMailService.");
-            Console.WriteLine($"Subject: {subject}");
-            Console.WriteLine($"Message: {message}");
+            Console.WriteLine($"[RELEASE] Mail from {_mailFrom} to {_mailTo}, using CloudMailService.");
+            Console.WriteLine($"[RELEASE] Subject: {subject}");
+            Console.WriteLine($"[RELEASE] Message: {message}");
         }
     }
 }

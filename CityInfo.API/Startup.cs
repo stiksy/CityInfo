@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using CityInfo.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
+using CityInfo.API.Services;
+using Microsoft.Extensions.Configuration;
 
 namespace CityInfo.API
 {
@@ -36,11 +37,12 @@ namespace CityInfo.API
             //        castedResolver.NamingStrategy = null;
             //    }
             //});
-#if DEBUG 
-            services.AddTransient<IMailService, LocalMailService>();
-#else
+
             services.AddTransient<IMailService, CloudMailService>();
+#if DEBUG
+            services.AddTransient<IMailService, LocalMailService>();
 #endif
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -15,9 +15,9 @@ namespace CityInfo.API.Services
         public void Send(string subject, string message)
         {
             // send mail - output to debug window
-            Debug.WriteLine($"Mail from {_mailFrom} to {_mailTo}, using LocalMailService.");
-            Debug.WriteLine($"Subject: {subject}");
-            Debug.WriteLine($"Message: {message}");
+            Console.WriteLine($"[DEBUG] Mail from {_mailFrom} to {_mailTo}, using LocalMailService.");
+            Console.WriteLine($"[DEBUG] Subject: {subject}");
+            Console.WriteLine($"[DEBUG] Message: {message}");
         }
     }
 }
