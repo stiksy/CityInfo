@@ -3,8 +3,12 @@
   memory: 256M
   disk_quota: 128M
   instances: 1
+  buildpack: dotnet_core_buildpack
+  command: cd ${DEPS_DIR}/0/dotnet_publish --configuration Release && ./CityInfo.API --server.urls http://0.0.0.0:${PORT}
   env:
     http_proxy: 10.143.18.126:80
     https_proxy: 10.143.18.126:80
     no_proxy: localhost,127.0.0.1
-    ASPNETCORE_ENVIRONMENT: Development
+    ASPNETCORE_ENVIRONMENT: Staging
+    MAIL_TOADDRESS: mail_to_fromenv@dt-cityinfo.com
+    MAIL_FROMADDRESS: mail_from_fromenv@dt-cityinfo.com

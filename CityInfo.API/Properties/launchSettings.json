@@ -12,7 +12,9 @@
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "MAIL_FROMADDRESS": "mail_from_fromenv@dt-cityinfo.com",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "MAIL_TOADDRESS": "mail_to_fromenv@dt-cityinfo.com"
       }
     },
     "CityInfo.API": {

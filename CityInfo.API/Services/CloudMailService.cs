@@ -9,8 +9,8 @@ namespace CityInfo.API.Services
 {
     public class CloudMailService : IMailService
     {
-        private string _mailTo = "fernando.marquardt@dell.com";
-        private string _mailFrom = "cityinfo.app@dell.com";
+        private string _mailTo = Startup.Configuration["MAIL_TOADDRESS"];
+        private string _mailFrom = Startup.Configuration["MAIL_FROMADDRESS"];
 
         public void Send(string subject, string message)
         {
